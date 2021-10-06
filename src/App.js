@@ -19,14 +19,12 @@ const Footer = () => {
   )
 }
 
-
-
 const App = () => {
 
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('')
   const [showAll, setShowAll] = useState(true)
-  const [errorMessage, setErrorMessage] = useState('some error happened...')
+  const [errorMessage, setErrorMessage] = useState(null)
 
 
   useEffect(() => {
@@ -53,7 +51,7 @@ const App = () => {
         )
         setTimeout(() => {
           setErrorMessage(null)
-        }, 5000)
+        }, 3000)
         setNotes(notes.filter(n => n.id !==id))
       })
   }
